@@ -1,7 +1,7 @@
 import csv
 
-from ofxstatement.plugin import Plugin
 from ofxstatement.parser import CsvStatementParser
+from ofxstatement.plugin import Plugin
 from ofxstatement.statement import Statement, StatementLine
 
 
@@ -36,9 +36,9 @@ class KhParser(CsvStatementParser):
         """
         with open(self.filename, "r") as f:
             self.fin = f
-            return self.old_parse()
+            return self.parse_csv_with_header()
 
-    def old_parse(self):
+    def parse_csv_with_header(self):
         reader = self.split_records()
         for line in reader:
             self.cur_record += 1
@@ -63,8 +63,7 @@ class KhParser(CsvStatementParser):
         stmt_line = StatementLine()
         for field, col in self.mappings.items():
             if col >= len(line):
-                raise ValueError("Cannot find column %s in line of %s items "
-                                 % (col, len(line)))
+                raise ValueError("Cannot find column %s in line of %s items " % (col, len(line)))
             rawvalue = line[col]
             value = self.parse_value(rawvalue, field)
             setattr(stmt_line, field, value)
