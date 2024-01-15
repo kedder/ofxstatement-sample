@@ -7,6 +7,7 @@ verify_ssl = true
 mypy = "*"
 pytest = "*"
 black = "*"
+exceptiongroup = {markers="python_version < '3.11'"}
 
 [packages]
 ofxstatement = "*"
