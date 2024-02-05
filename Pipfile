@@ -7,11 +7,10 @@ verify_ssl = true
 mypy = "*"
 pytest = "*"
 black = "*"
-exceptiongroup = {markers="python_version < '3.11'"}
+exceptiongroup = "*"
+build = "*"
+tomli = "*"
 
 [packages]
 ofxstatement = "*"
 ofxstatement-sample = {editable = true,path = "."}
-
-[pipenv]
-allow_prereleases = true

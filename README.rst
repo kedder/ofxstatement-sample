@@ -47,9 +47,9 @@ To create your own plugin, follow these steps:
   lists plugins you are registering within ofxstatement. Give meaningful
   name to the plugin and provide plugin class name
 * Replace contents of ``README.rst`` with description of your plugin
-* Rename ``ofxstatement/plugins/sample.py`` to match plugin package name
+* Rename ``ofxstatement_sample`` to match plugin package name
   you have provided in ``entry_points`` parameter.
-* Open renamed sample.py and rename ``SamplePlugin`` and ``SampleParser``
+* Open the ``plugin.py`` and rename ``SamplePlugin`` and ``SampleParser``
   classes to match your plugin class name.
 * Now, draw the rest of the owl (c).
 

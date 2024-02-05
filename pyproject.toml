@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ofxstatement-sample"
+version = "0.0.1"
+authors = [
+  { name="Andrey Lebedev", email="andrey@lebedev.lt" },
+]
+description = "Sample plugin for ofxstatement"
+readme = "README.rst"
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Natural Language :: English",
+    "Topic :: Office/Business :: Financial :: Accounting",
+    "Topic :: Utilities",
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+]
+keywords = ["ofx", "banking", "statement", "plugin", "ofxstatement"]
+dependencies = [
+  "ofxstatement",
+]
+
+[project.urls]
+Homepage = "https://github.com/kedder/ofxstatement-sample/"
+
+[project.entry-points."ofxstatement"]
+sample = "ofxstatement_sample.plugin:SamplePlugin"
